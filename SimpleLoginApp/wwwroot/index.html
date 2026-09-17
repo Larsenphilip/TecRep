@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ══ Auth page centering wrapper ══════════════════════════ -->
+    <div class="auth-page" id="loginPage">
+
+        <!-- ══ White card ═══════════════════════════════════════ -->
+        <div class="form-card" id="loginContainer">
+
+            <h1 id="loginTitle">Welcome back</h1>
+            <p class="form-subtitle">Sign in to your account to continue.</p>
+
+            <!-- ══ Login form ════════════════════════════════════ -->
+            <form class="login-form" id="loginForm">
+
+                <!-- Username -->
+                <div class="form-group" id="usernameGroup">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text"
+                           id="username"
+                           name="username"
+                           class="form-input username-input"
+                           placeholder="Enter your username"
+                           required>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group" id="passwordGroup">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="password-container">
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               class="form-input password-input"
+                               placeholder="Enter your password"
+                               required
+                               minlength="6">
+                        <button type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                                aria-label="Show/hide password">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Forgot Password link -->
+                <div class="form-link-row" id="forgotPasswordContainer">
+                    <a href="forgetpassword.html"
+                       id="forgotPasswordLink">Forgot Password?</a>
+                </div>
+
+                <!-- Login button -->
+                <div id="loginButtonContainer">
+                    <button type="submit"
+                            class="btn btn-primary"
+                            id="loginButton">
+                        Login
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Status message -->
+            <p id="message"> </p>
+
+            <hr class="form-divider">
+
+            <!-- New user? -->
+            <div class="form-footer" id="signupContainer">
+                <span id="signupText">New user?</span>
+                <a href="register.html" id="signupButton">Sign Up</a>
+            </div>
+
+        </div><!-- /form-card -->
+
+    </div><!-- /auth-page -->
+
+    <script src="./js/login.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Search — TecRep</title>
+
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <!-- ══ Navigation Bar ════════════════════════════════════════ -->
+    <nav class="navbar">
+
+        <!-- Brand / logo -->
+        <a href="home.html" class="navbar-brand">
+            TecRep
+        </a>
+
+        <!-- Mobile hamburger toggle -->
+        <button class="navbar-toggle"
+                id="navToggle"
+                aria-label="Toggle navigation"
+                onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="navbar-links" id="navLinks">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="#">Doctor</a></li>
+            <li><a href="search.html" class="active">Search</a></li>
+            <li><a href="#">Procedure</a></li>
+            <li><a href="#">Reports</a></li>
+            <li>
+                <button id="logoutButton">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Sign out
+                </button>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- ══ Hero Banner ═══════════════════════════════════════════ -->
+    <section class="home-hero">
+        <h1>Patient Search</h1>
+        <p>Search using Patient Name or Reference Number</p>
+    </section>
+
+    <!-- ══ Main Content ══════════════════════════════════════════ -->
+    <main class="home-main">
+        <div class="auth-page" style="min-height:unset; padding: 0; align-items:flex-start;">
+            <div class="form-card" style="max-width: 800px; width: 100%;">
+
+                <!-- =========================================
+                     SEARCH FORM
+                ========================================== -->
+                <form id="searchForm">
+                    <div class="search-box" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="text"
+                               id="searchInput"
+                               name="search"
+                               class="form-input"
+                               style="flex: 1; min-width: 250px;"
+                               placeholder="Enter patient name or reference number"
+                               autocomplete="off"
+                               required>
+
+                        <button type="submit"
+                                id="searchButton"
+                                class="btn btn-primary"
+                                style="width: auto; margin-top: 0;">
+                            <i class="fa-solid fa-magnifying-glass" style="margin-right:6px;"></i>Search
+                        </button>
+
+                        <button type="button"
+                                id="clearButton"
+                                class="btn btn-secondary"
+                                style="width: auto; margin-top: 0;">
+                            <i class="fa-solid fa-rotate-left" style="margin-right:6px;"></i>Clear
+                        </button>
+                    </div>
+                </form>
+
+                <!-- =========================================
+                     MESSAGE
+                ========================================== -->
+                <div id="searchMessage"
+                     class="search-message"
+                     style="margin-top: 15px; text-align: center; font-weight: 500;">
+                </div>
+
+                <!-- =========================================
+                     RESULTS
+                ========================================== -->
+                <section id="searchResults"
+                         class="search-results"
+                         style="display: none; margin-top: 30px;">
+
+                    <div class="section-label">Patient Details</div>
+
+                    <div id="resultsContainer" class="results-grid"></div>
+
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/search.js"></script>
+
+</body>
+
+</html>

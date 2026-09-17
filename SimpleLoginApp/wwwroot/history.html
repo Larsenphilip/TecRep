@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History — TecRep</title>
+    <meta name="description" content="Patient history records including reference number, personal details, blood group, procedure, and chief complaint.">
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+</head>
+
+<body>
+
+    <!-- ══ Navigation Bar ════════════════════════════════════════ -->
+    <nav class="navbar">
+
+        <!-- Brand / logo -->
+        <a href="home.html" class="navbar-brand">
+            TecRep
+        </a>
+
+        <!-- Mobile hamburger toggle -->
+        <button class="navbar-toggle"
+                id="navToggle"
+                aria-label="Toggle navigation"
+                onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="navbar-links" id="navLinks">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="history.html" class="active">History</a></li>
+            <li><a href="#">Doctor</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="#">Procedure</a></li>
+            <li><a href="#">Reports</a></li>
+            <li>
+                <button id="logoutButton">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Sign out
+                </button>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- ══ Hero Banner ════════════=═════════════════════════════════ -->
+    <section class="home-hero">
+        <h1> Patient History</h1>
+    </section>
+
+    <!-- ══ Main Content ═════════════════════════════════════════════ -->
+    <main class="home-main">
+
+        <div class="auth-page" style="min-height:unset; padding: 0; align-items:flex-start;">
+
+            <div class="form-card history-card">
+
+                <h1 id="historyTitle" style="font-size:1.35rem; margin-bottom:4px;">New History Entry</h1>
+                <p class="form-subtitle">Fill in the patient details below and save the record.</p>
+
+                <form id="historyForm">
+
+                    <div class="history-form-grid">
+
+                        <!-- ── Reference & Date ─────────────────── -->
+                        <div class="section-label">Reference & Date</div>
+
+                        <!-- Reference Number -->
+                        <div class="form-group">
+                            <label for="refNumber" class="form-label">Reference Number</label>
+                            <input type="text"
+                                   id="refNumber"
+                                   name="refNumber"
+                                   class="form-input"
+                                   placeholder="Auto-generated"
+                                   readonly
+                                   aria-readonly="true">
+                        </div>
+
+                        <!-- Date -->
+                        <div class="form-group">
+                            <label for="entryDate" class="form-label">Date</label>
+                            <input type="date"
+                                   id="entryDate"
+                                   name="entryDate"
+                                   class="form-input"
+                                   required>
+                        </div>
+
+                        <!-- ── Patient Details ──────────────────── -->
+                        <div class="section-label">Patient Details</div>
+
+                        <!-- Patient Name -->
+                        <div class="form-group">
+                            <label for="patientName" class="form-label">Patient Name</label>
+                            <input type="text"
+                                   id="patientName"
+                                   name="patientName"
+                                   class="form-input"
+                                   placeholder="Full name"
+                                   required
+                                   maxlength="100"
+                                   autocomplete="off">
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div class="form-group">
+                            <label for="dob" class="form-label">Date of Birth</label>
+                            <input type="date"
+                                   id="dob"
+                                   name="dob"
+                                   class="form-input"
+                                   required>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="form-group">
+                            <label for="mobile" class="form-label">Mobile Number</label>
+                            <input type="tel"
+                                   id="mobile"
+                                   name="mobile"
+                                   class="form-input"
+                                   placeholder="e.g. 9876543210"
+                                   maxlength="10"
+                                   pattern="[6-9][0-9]{9}"
+                                   inputmode="numeric"
+                                   required>
+
+                        </div>
+
+                        <!-- Email ID -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email ID</label>
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   class="form-input"
+                                   placeholder="patient@example.com"
+                                   required>
+                        </div>
+
+                        <!-- Blood Group -->
+                        <div class="form-group">
+                            <label for="bloodGroup" class="form-label">Blood Group</label>
+                            <select id="bloodGroup"
+                                    name="bloodGroup"
+                                    class="form-select"
+                                    required>
+                                <option value="" disabled selected>Select blood group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A−</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B−</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB−</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O−</option>
+                            </select>
+                        </div>
+
+                        <!-- ── Clinical Information ─────────────── -->
+                        <div class="section-label">Clinical Information</div>
+
+                        <!-- Procedure to be Done -->
+                        <div class="form-group">
+                            <label for="procedure" class="form-label">Procedure to be Done</label>
+                            <input type="text"
+                                   id="procedure"
+                                   name="procedure"
+                                   class="form-input"
+                                   placeholder="e.g. Root Canal, Scaling"
+                                   required>
+                        </div>
+
+                        <!-- Referred by Doctor -->
+                        <div class="form-group">
+                            <label for="referredBy" class="form-label">Referred by Doctor</label>
+                            <input type="text"
+                                   id="referredBy"
+                                   name="referredBy"
+                                   class="form-input"
+                                   placeholder="Referring doctor's name"
+                                   required>
+                        </div>
+
+                        <!-- Chief Complaint — full width -->
+                        <div class="form-group span-2">
+                            <label for="chiefComplaint" class="form-label">Chief Complaint</label>
+                            <textarea id="chiefComplaint"
+                                      name="chiefComplaint"
+                                      class="form-textarea"
+                                      placeholder="Describe the patient's main complaint..."
+                                      required></textarea>
+                        </div>
+
+                    </div><!-- /history-form-grid -->
+                    <!-- Action buttons -->
+                    <div class="history-actions">
+                        <button type="submit"
+                                class="btn btn-primary"
+                                id="saveHistoryBtn">
+                            <i class="fa-solid fa-floppy-disk" style="margin-right:6px;"></i>Save Record
+                        </button>
+                        <button type="button"
+                                class="btn btn-secondary"
+                                id="clearHistoryBtn">
+                            <i class="fa-solid fa-rotate-left" style="margin-right:6px;"></i>Clear
+                        </button>
+                    </div>
+
+                    <!-- Status message -->
+                    <p id="historyMessage"></p>
+
+                </form>
+
+            </div><!-- /form-card -->
+
+        </div>
+
+    </main>
+
+    <script src="js/history.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+﻿/* ============================================================
+   SEARCH PAGE SPECIFIC STYLES
+   ============================================================ */
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+/* ── Patient Card ──────────────────────────────────────────── */
+.patient-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.patient-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.patient-card-header {
+    background: var(--sky-pale);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.patient-card-header h3 {
+    color: var(--sky-deeper);
+    margin-bottom: 4px;
+    font-size: 1.25rem;
+}
+
+.patient-card-header span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.reference-number {
+    background: var(--sky-soft);
+    color: var(--sky-dark);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px dashed var(--sky);
+}
+
+.patient-details {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+}
+
+.detail span {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.detail.full-width {
+    grid-column: 1 / -1;
+    background: var(--sky-pale);
+    padding: 16px;
+    border-radius: 6px;
+    border-left: 4px solid var(--sky);
+}
+
+/* ── Messages ──────────────────────────────────────────────── */
+.search-message.error {
+    color: #d32f2f;
+    background-color: #fdecea;
+    padding: 10px;
+    border-radius: var(--radius);
+}
+
+.search-message.success {
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: var(--radius);
+}
+
+.search-message.info {
+    color: var(--sky-deeper);
+    background-color: var(--sky-pale);
+    padding: 10px;
+    border-radius: var(--radius);
+}

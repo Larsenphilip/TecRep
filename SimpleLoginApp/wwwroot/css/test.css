@@ -1,0 +1,627 @@
+/* ============================================================
+   LIGHT BLUE THEME — SHARED STYLESHEET
+   Used by: index.html, register.html, forgetpassword.html, home.html
+   ============================================================ */
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+    --sky-pale: #f0f7ff;
+    --sky-soft: #e1f0fb;
+    --white: #ffffff;
+    --sky: #29b6f6;
+    --sky-dark: #0288d1;
+    --sky-deeper: #0369a1;
+    --text-dark: #0c2340;
+    --text-muted: #5a7fa0;
+    --border: #b3d9f2;
+    --shadow: rgba(2, 136, 209, 0.10);
+    --radius: 10px;
+    --transition: 0.2s ease;
+}
+
+/* ── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--sky-pale);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+h1, h2, h3 {
+    color: var(--sky-deeper);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--sky-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+    a:hover {
+        color: var(--sky-deeper);
+        text-decoration: underline;
+    }
+
+/* ============================================================
+   AUTH PAGES  (Login / Register / Forgot Password)
+   ============================================================ */
+
+/* Full-page centering wrapper */
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+    background-color: var(--sky-pale);
+}
+
+/* White card */
+.form-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 24px var(--shadow);
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 420px;
+}
+
+    /* Card title */
+    .form-card h1 {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+        color: var(--sky-deeper);
+    }
+
+/* Subtle tagline under title */
+.form-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+/* Divider line inside card */
+.form-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+}
+
+/* ── Form Groups ───────────────────────────────────────────── */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    /*    color: var(--sky-deeper);*/
+    margin-bottom: 6px;
+}
+
+/* ── Inputs ────────────────────────────────────────────────── */
+.form-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--sky-soft);
+    /*    color: var(--text-dark);*/
+    font-size: 0.95rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+}
+
+    .form-input:focus {
+        border-color: var(--sky);
+        box-shadow: 0 0 0 3px rgba(41, 182, 246, 0.18);
+        background: var(--white);
+    }
+
+    .form-input::placeholder {
+        /*    color: #90cce8;*/
+    }
+
+/* ── Password Wrapper ──────────────────────────────────────── */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+    .password-container .form-input {
+        padding-right: 44px;
+    }
+
+    /* Eye toggle button */
+    .password-toggle,
+    .password-container button {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        transition: color var(--transition);
+        line-height: 1;
+    }
+
+        .password-toggle:hover,
+        .password-container button:hover {
+            color: var(--sky-dark);
+        }
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+    text-align: center;
+}
+
+    .btn:active {
+        transform: scale(0.98);
+    }
+
+/* Primary — sky blue */
+.btn-primary {
+    background-color: var(--sky-dark);
+    color: var(--white);
+    width: 100%;
+    margin-top: 6px;
+}
+
+    .btn-primary:hover {
+        background-color: var(--sky-deeper);
+    }
+
+/* Secondary / outline */
+.btn-secondary {
+    background-color: transparent;
+    /*    color: var(--sky-dark);*/
+    border: 1.5px solid var(--sky-dark);
+    width: 100%;
+    margin-top: 8px;
+}
+
+    .btn-secondary:hover {
+        background-color: var(--sky-soft);
+    }
+
+/* ── Inline link row (e.g. Forgot Password?) ───────────────── */
+.form-link-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+    margin-bottom: 14px;
+}
+
+    .form-link-row a {
+        font-size: 0.82rem;
+    }
+
+/* ── Bottom helper text ────────────────────────────────────── */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+    .form-footer a {
+        font-weight: 600;
+        margin-left: 4px;
+    }
+
+/* ── Status / error message ────────────────────────────────── */
+#message {
+    margin-top: 14px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 1.2em;
+    color: var(--sky-deeper);
+}
+
+/* ── Brand icon above title ────────────────────────────────── */
+.brand-icon {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+
+/* ── Navigation Bar ────────────────────────────────────────── */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--sky-dark);
+    padding: 0 32px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.navbar-brand {
+    color: #e0f4fd;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+    .navbar-brand:hover {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+}
+
+    .navbar-links a {
+        color: #b3e5fc;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 8px 14px;
+        border-radius: 6px;
+        transition: background-color var(--transition), color var(--transition);
+        text-decoration: none;
+    }
+
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            background-color: rgba(255,255,255,0.15);
+            color: var(--white);
+            text-decoration: none;
+        }
+
+/* Logout button inside nav */
+#logoutButton {
+    background-color: var(--sky);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition);
+    margin-left: 8px;
+}
+
+    #logoutButton:hover {
+        background-color: var(--sky-dark);
+    }
+
+/* ── Home Hero Section ─────────────────────────────────────── */
+.home-hero {
+    background: linear-gradient(135deg, var(--sky-dark) 0%, var(--sky) 100%);
+    color: #e0f4fd;
+    padding: 40px 32px;
+    text-align: center;
+}
+
+    .home-hero h1 {
+        color: var(--white);
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+
+    .home-hero p {
+        font-size: 1.05rem;
+        color: #e0f4fd;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+/* ── Home Content Sections ─────────────────────────────────── */
+.home-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.home-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+    .home-section h2 {
+        font-size: 1.15rem;
+        color: var(--sky-deeper);
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .home-section p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+    }
+
+/* Quick-link cards grid */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.home-card {
+    background: var(--sky-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: box-shadow var(--transition), transform var(--transition);
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+    .home-card:hover {
+        box-shadow: 0 4px 16px var(--shadow);
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
+
+    .home-card .card-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .home-card h3 {
+        font-size: 0.95rem;
+        color: var(--sky-deeper);
+    }
+
+/* ── Mobile Hamburger ──────────────────────────────────────── */
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #e0f4fd;
+    font-size: 1.3rem;
+    padding: 4px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+
+    .form-card {
+        padding: 28px 20px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 12px 20px;
+        gap: 8px;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 2px;
+        padding-bottom: 8px;
+    }
+
+        .navbar-links.open {
+            display: flex;
+        }
+
+        .navbar-links a {
+            width: 100%;
+            padding: 10px 12px;
+        }
+
+    #logoutButton {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .home-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .home-hero {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ── History page extras ─────────────────────────────── */
+
+/* Two-column responsive form grid */
+.history-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 28px;
+}
+
+    /* Let certain fields span both columns */
+    .history-form-grid .span-2 {
+        grid-column: 1 / -1;
+    }
+
+/* Section divider inside the card */
+.section-label {
+    grid-column: 1 / -1;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sky-dark);
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    margin-top: 6px;
+}
+
+/* Select styling — consistent with .form-input */
+.form-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--sky-soft);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230288d1' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+    cursor: pointer;
+}
+
+    .form-select:focus {
+        border-color: var(--sky);
+        box-shadow: 0 0 0 3px rgba(41, 182, 246, 0.18);
+        background-color: var(--white);
+    }
+
+/* Textarea */
+.form-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--sky-soft);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    resize: vertical;
+    min-height: 88px;
+}
+
+    .form-textarea:focus {
+        border-color: var(--sky);
+        box-shadow: 0 0 0 3px rgba(41, 182, 246, 0.18);
+        background: var(--white);
+    }
+
+    .form-textarea::placeholder,
+    .form-select option[value=""] {
+        color: #90cce8;
+    }
+
+/* Read-only ref number styling */
+.form-input[readonly] {
+    background: var(--sky-pale);
+    /*    color: var(--sky-deeper);*/
+    font-weight: 600;
+    cursor: default;
+    border-style: dashed;
+}
+
+/* Action button row */
+.history-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+    .history-actions .btn {
+        flex: 1;
+    }
+
+/* Widen the card for a form with this many fields */
+.history-card {
+    max-width: 780px;
+}
+
+/* Status / feedback message */
+#historyMessage {
+    margin-top: 14px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: center;
+    min-height: 1.2em;
+    color: var(--sky-deeper);
+}
+
+/* Responsive: collapse to single column on small screens */
+@media (max-width: 640px) {
+    .history-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+        .history-form-grid .span-2 {
+            grid-column: 1;
+        }
+
+    .section-label {
+        grid-column: 1;
+    }
+
+    .history-actions {
+        flex-direction: column;
+    }
+}

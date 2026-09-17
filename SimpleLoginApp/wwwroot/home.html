@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/test.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ══ Navigation Bar ════════════════════════════════════════ -->
+    <nav class="navbar">
+
+        <!-- Brand / logo -->
+        <a href="home.html" class="navbar-brand">
+            TecRep
+        </a>
+
+        <!-- Mobile hamburger toggle -->
+        <button class="navbar-toggle"
+                id="navToggle"
+                aria-label="Toggle navigation"
+                onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Nav links -->
+        <ul class="navbar-links" id="navLinks">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="#">Doctor</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="#">Procedure</a></li>
+            <li><a href="#">Reports</a></li>
+            <li>
+                <button id="logoutButton">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Sign out
+                </button>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- ══ Hero Banner ═══════════════════════════════════════════ -->
+    <section class="home-hero">
+        <h1>Welcome!</h1>
+    </section>
+
+    <!-- ══ Main Content ══════════════════════════════════════════ -->
+    <main class="home-main">
+
+        <!-- Quick Links Section -->
+        <section class="home-section">
+            <h2>Quick Access</h2>
+            <div class="home-grid">
+
+                <a href="history.html" class="home-card">
+                    <div class="card-icon">&#128203;</div>
+                    <h3>History</h3>
+                </a>
+
+                <a href="#" class="home-card">
+                    <div class="card-icon">&#128084;</div>
+                    <h3>Doctor</h3>
+                </a>
+
+                <a href="search.html" class="home-card">
+                    <div class="card-icon">&#128269;</div>
+                    <h3>Search</h3>
+                </a>
+
+                <a href="#" class="home-card">
+                    <div class="card-icon">&#128196;</div>
+                    <h3>Procedure</h3>
+                </a>
+
+                <a href="#" class="home-card">
+                    <div class="card-icon">&#128202;</div>
+                    <h3>Reports</h3>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Info / placeholder section -->
+        <section class="home-section">
+            <h2>Overview</h2>
+            <p>Select a section above to get started. Your data and records will appear here.</p>
+        </section>
+
+    </main>
+
+    <script src="js/home.js"></script>
+
+</body>
+</html>
+
